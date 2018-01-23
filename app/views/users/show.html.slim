@@ -1,0 +1,14 @@
+h1
+  | Hello,
+  = @user.username
+
+= gravatar_for @user
+p
+  = @user.username
+p
+  = @user.email
+p
+  = @user.created_at
+p
+  = @user.updated_at
+

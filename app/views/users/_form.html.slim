@@ -1,0 +1,18 @@
+- if @user.errors.any?
+  ul
+    - @user.errors.full_messages.each do |msg|
+      li.text-danger
+        = msg
+
+.container
+  = form_for(@user) do |f|
+    .form-group
+      = f.label :username
+      = f.text_field :username, class: "form-control"
+    .form-group
+      = f.label :email
+      = f.text_field :email, class: "form-control"
+    .form-group
+      = f.label :password
+      = f.password_field :password, class: "form-control"
+    = f.submit @user.new_record? ? "Signup" : "Update", class: "btn btn-primary"
